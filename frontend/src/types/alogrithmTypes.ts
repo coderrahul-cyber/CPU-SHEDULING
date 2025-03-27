@@ -1,0 +1,1 @@
+export type SchedulingAlgorithm =| 'FCFS'| 'SJF'| 'Priority'| 'RR';
