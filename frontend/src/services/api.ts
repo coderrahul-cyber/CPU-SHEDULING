@@ -36,18 +36,13 @@ export interface ProcessMetrics extends ProcessRequest {
   waitingTime: number;
   turnaroundTime: number;
 }
-
-// Axios instance configuration
 const api = axios.create({
-  // Note: If using Vite, ensure your env variable starts with VITE_ (e.g., VITE_API_URL)
   baseURL: import.meta.env.REACT_APP_API_URL || 'http://localhost:5000/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
 });
-
-// API function to schedule processes
 export const scheduleProcesses = async (
   processes: ProcessRequest[],
   algorithm: string,
@@ -79,7 +74,7 @@ export const transformMetrics = (
   processes: ProcessRequest[],
   metrics: MetricsResponse
 ): ProcessMetrics[] => {
-  console.log("Raw Metrics:", metrics); // Check backend response structure
+  console.log("Raw Metrics:", metrics);
   console.log("Processes:", processes);
   return processes.map((process) => {
     const waitingTime = metrics.waitingTimes?.[process.id] ?? 0;

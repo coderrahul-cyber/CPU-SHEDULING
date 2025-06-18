@@ -8,14 +8,14 @@ export interface ProcessMetrics {
   }
   
 interface ResultsTableProps {
-  processes?: ProcessMetrics[]; // Make optional
+  processes?: ProcessMetrics[];
   metrics?: {
     avgWaitingTime?: number;
     avgTurnaroundTime?: number;
   };
 }
 
-function ResultsTable({ processes = [], metrics = {} }: ResultsTableProps) {
+function ResultsTable({ processes=[] , metrics ={}}: ResultsTableProps) {
   console.log(metrics.avgTurnaroundTime , "average")
   // Add safe defaults
   const safeMetrics = {

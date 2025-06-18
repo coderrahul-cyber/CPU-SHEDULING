@@ -11,14 +11,13 @@ import AlgorithmSelector from './components/AlgorithmSelector';
 import GanttChart from './components/GanttChart';
 import ResultsTable from './components/ResultsTable';
 import SimulationControls from './components/SimulationControls';
+import { SchedulingAlgorithm } from './types/alogrithmTypes';
 
-// Type definitions
-type Algorithm = 'FCFS' | 'SJF' | 'Priority' | 'RR';
 
 export default function App() {
   // State management
   const [processes, setProcesses] = useState<ProcessRequest[]>([]);
-  const [algorithm, setAlgorithm] = useState<Algorithm>('FCFS');
+  const [algorithm, setAlgorithm] = useState<SchedulingAlgorithm>('FCFS');
   const [timeQuantum, setTimeQuantum] = useState<number>(2);
   const [results, setResults] = useState<ApiResponse | null>(null);
   const [isSimulating, setIsSimulating] = useState(false);

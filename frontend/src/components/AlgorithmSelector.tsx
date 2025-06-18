@@ -14,7 +14,7 @@ const AlgorithmSelector = ({
   timeQuantum,
   onTimeQuantumChange,
 }: AlgorithmSelectorProps) => {
-  // Define available algorithms with user-friendly names
+  // Algorithms Dropdown Options
   const algorithms = [
     { value: 'FCFS', label: 'First-Come First-Served (FCFS)' },
     { value: 'SJF', label: 'Shortest Job First (SJF)' },
