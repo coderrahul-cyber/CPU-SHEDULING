@@ -12,6 +12,7 @@ import GanttChart from './components/GanttChart';
 import ResultsTable from './components/ResultsTable';
 import SimulationControls from './components/SimulationControls';
 import { SchedulingAlgorithm } from './types/alogrithmTypes';
+import ReadyQueueHistory from './components/ReadyQueue';
 
 
 export default function App() {
@@ -22,6 +23,8 @@ export default function App() {
   const [results, setResults] = useState<ApiResponse | null>(null);
   const [isSimulating, setIsSimulating] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const [readyQueueHistory, setReadyQueueHistory] = useState<ApiResponse['ready_queue_history']>([]);
 
   // Derived state (optional, or use inline transform)
   const processMetrics: ProcessMetrics[] = results
@@ -39,6 +42,7 @@ export default function App() {
       const data = await scheduleProcesses(processes, algorithm, timeQuantum);
       console.log("API Response:", data); // Debug log
       setResults(data);
+      setReadyQueueHistory(data.ready_queue_history || []);
     } catch (err) {
       const apiError = err as ApiError;
       setError(apiError.message || 'Simulation failed');
@@ -62,7 +66,6 @@ export default function App() {
         <h1 className="text-4xl  font-serif  text-gray-950  mb-8 uppercase text-center">
           Process Scheduling Simulator..
         </h1>
-
         {/* Error Display */}
         {error && (
           <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600">
@@ -107,6 +110,11 @@ export default function App() {
             )}
           </div>
         </div>
+        <div className="">
+
+       {readyQueueHistory && <ReadyQueueHistory history={readyQueueHistory} /> }
+        </div>
+
       </div>
     </div>
   );
