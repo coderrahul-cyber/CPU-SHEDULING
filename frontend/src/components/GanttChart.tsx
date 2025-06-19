@@ -1,19 +1,13 @@
-import React from 'react';
-
 interface TimelineEntry {
   id: string;
   start: number;
   end: number;
   label?: string; // Optional custom label
 }
-
 interface GanttChartProps {
   timeline: TimelineEntry[];
-  /** px per time unit */
   unitWidth?: number;
-  /** Chart title */
   title?: string;
-  /** Height of each bar in pixels */
   barHeight?: number;
 }
 
@@ -77,7 +71,7 @@ export default function GanttChart({
   const chartHeight = Math.max(sorted.length * (barHeight + 8), 40); // Dynamic height based on entries
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-lg overflow-x-auto">
+    <div className="p-6 bg-white rounded-xl shadow-lg overflow-x-auto">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">{title}</h2>
       
       {/* Chart container */}

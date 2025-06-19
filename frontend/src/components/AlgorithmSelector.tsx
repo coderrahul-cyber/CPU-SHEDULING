@@ -23,8 +23,8 @@ const AlgorithmSelector = ({
   ];
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md mb-4 md:w-[25vw]">
-      <h2 className="text-xl font-semibold mb-4 text-gray-700">
+    <div className="p-6 bg-white rounded-xl  shadow-lg mb-4 md:w-[25vw]">
+      <h2 className="text-xl font-semibold mb-4 text-gray-800">
         Scheduling Algorithm
       </h2>
 
@@ -33,7 +33,7 @@ const AlgorithmSelector = ({
         <select
           value={selectedAlgorithm}
           onChange={(e) => onAlgorithmChange(e.target.value as SchedulingAlgorithm)}
-          className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="w-full p-2 border rounded-md focus:ring-none"
         >
           {algorithms.map((algorithm) => (
             <option

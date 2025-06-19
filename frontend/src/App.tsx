@@ -56,11 +56,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 w-full">
-      <div className="container mx-auto px-4 md:px-0">
+    <div className="min-h-screen  bg-[#CFFDE1]  py-8 w-full">
+      <div className="container  mx-auto px-4 md:px-0">
         {/* Header */}
-        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-          Process Scheduling Simulator
+        <h1 className="text-4xl  font-serif  text-gray-950  mb-8 uppercase text-center">
+          Process Scheduling Simulator..
         </h1>
 
         {/* Error Display */}
@@ -70,7 +70,7 @@ export default function App() {
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6  ">
+        <div className="flex  p-2 justify-center ">
           {/* Control Section */}
           <div className="lg:col-span-1">
             <ProcessForm

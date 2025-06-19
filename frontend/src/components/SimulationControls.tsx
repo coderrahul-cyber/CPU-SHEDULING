@@ -13,7 +13,7 @@ interface SimulationControlsProps {
     hasProcesses
   }: SimulationControlsProps) {
     return (
-      <div className="p-6 bg-white rounded-lg shadow-md md:w-[25vw] ">
+      <div className="p-6 bg-white rounded-xl shadow-lg md:w-[25vw] ">
         <div className="flex flex-col sm:flex-row gap-4 justify-between">
           {/* Simulate Button */}
           <button

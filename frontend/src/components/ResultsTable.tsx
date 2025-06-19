@@ -24,7 +24,7 @@ function ResultsTable({ processes=[] , metrics ={}}: ResultsTableProps) {
   };
 
   return (
-    <div className="results-table  ">
+    <div className="results-table  bg-white p-6 rounded-xl ">
       <h3 className="text-xl font-semibold mb-2 ">Performance Metrics</h3>
       
       <table>
